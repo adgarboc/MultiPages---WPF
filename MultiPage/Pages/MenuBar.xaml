@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="MultiPage.Pages.MenuBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MultiPage.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style x:Key="menuButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="#FF9F4545"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF330F58" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9"/>
+            <ColumnDefinition Width="150"/> 
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnControlPage" Content="Control Page" Grid.Column="1" Style="{DynamicResource menuButtonStyle}" HorizontalAlignment="Left" Width="150" Click="btnControlPage_Click"/>
+        <Button x:Name="btnAlarmPage" Content="Alarm Page" Grid.Column="3" Style="{DynamicResource menuButtonStyle}" Click="btnAlarmPage_Click"/>
+        <Button x:Name="btnGraphPage" Content="Graph Page" Grid.Column="5" Style="{DynamicResource menuButtonStyle}" Click="btnGraphPage_Click"/>
+        <Button x:Name="btnMenuPage" Content="Menu Page" Grid.Column="7" Style="{DynamicResource menuButtonStyle}" Click="btnMenuPage_Click"/>
+        
+    </Grid>
+</UserControl>
